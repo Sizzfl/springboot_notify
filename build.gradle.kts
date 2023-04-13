@@ -13,6 +13,9 @@ configurations {
 	compileOnly {
 		extendsFrom(configurations.annotationProcessor.get())
 	}
+	all {
+		exclude("org.springframework.boot", "spring-boot-starter-logging")
+	}
 }
 
 repositories {
@@ -34,6 +37,7 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.springframework.boot:spring-boot-starter-data-jdbc")
 	implementation("org.springframework.boot:spring-boot-starter-jdbc")
+	implementation("org.springframework.boot:spring-boot-starter-log4j2")
 	implementation("org.apache.kafka:kafka-streams")
 	implementation("org.springframework.kafka:spring-kafka")
 	implementation("com.google.firebase:firebase-admin:9.1.1")
